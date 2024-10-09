@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <shape android:="rectangle">
+        <!-- Rounded rectangle shape -->
+        <corners android:radius="10dp" />
+
+        <!-- Solid background color (purple) -->
+        <solid android:color="#d9c5fa" /> <!-- Hex code for purple -->
+
+        <!-- Optional: Add a stroke/border -->
+        <stroke
+            android:width="2dp"
+            android:color="#5e005e" /> <!-- Darker purple for the stroke -->\
+
+
+    </shape>
+
+
+
+
+</selector>
