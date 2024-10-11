@@ -1,6 +1,6 @@
-#Juney Scented Candle
+# Juney Scented Candle
 
-##Overview of Use/Purpose
+## Overview of Use/Purpose
 **Juney Candles** is an application designed for scented candle enthusiasts to ease them during purchasing of scented candles. With this application, customers can customise their candles according to their personal preferences, browse their favourite candles and complete purchases with convenience and satisfaction.
 ### Customers Features:
 - **Search and View Candles:** Easily find and view available scented candles.
