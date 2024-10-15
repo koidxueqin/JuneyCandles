@@ -34,8 +34,8 @@
 
     <ImageButton
         android:id="@+id/edit_button"
-        android:layout_width="41dp"
-        android:layout_height="47dp"
+        android:layout_width="50dp"
+        android:layout_height="53dp"
         android:layout_marginStart="244dp"
         android:layout_marginTop="84dp"
         android:background="?attr/selectableItemBackgroundBorderless"
