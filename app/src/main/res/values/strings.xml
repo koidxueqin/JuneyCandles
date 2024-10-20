@@ -1,4 +1,14 @@
 <resources>
-    <string name="app_name">JuneyCandles</string>
+    <string name="app_name">Juney Candles</string>
     <string name="log_in">LOG IN</string>
+    <string name="signup_title">Please fill in your details</string>
+    <string name="juney_display">Juney</string>
+    <string name="signup_button">SIGN UP</string>
+    <string name="hint_phone">Phone Number</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_address">Address</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_cfpassword">Confirm Password</string>
+
 </resources>
