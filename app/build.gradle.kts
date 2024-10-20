@@ -2,9 +2,13 @@ plugins {
     alias(libs.plugins.android.application)
 }
 
+dependencies {
+    implementation(libs.sqlite)  // Correct this to match the catalog entry
+}
+
 android {
     namespace = "com.example.juneycandles"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.juneycandles"
@@ -32,11 +36,12 @@ android {
 }
 
 dependencies {
-
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.sqlite)  // Add this SQLite implementation
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

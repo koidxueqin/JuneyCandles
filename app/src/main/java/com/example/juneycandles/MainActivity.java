@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.signup_page); // Change this to signup_page.xml
+        setContentView(R.layout.startup_page);
 
         // Apply window insets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -35,15 +35,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Back button to navigate back to the login page
-        Button backButton = findViewById(R.id.backButton);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish(); // Finish current activity
-            }
-        });
+
     }
 }

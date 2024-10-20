@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SignupActivity">
 
 
     <TextView
@@ -38,18 +38,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.006" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="@string/signup_button"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
 
     <EditText
         android:id="@+id/phoneInput"
@@ -67,7 +55,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.389"
-        tools:ignore="TextFields,TextContrastCheck" />
+        tools:ignore="Autofill,TextContrastCheck,TextFields" />
 
     <EditText
         android:id="@+id/nameInput"
@@ -76,6 +64,7 @@
         android:layout_marginStart="68dp"
         android:background="@drawable/edit_input"
         android:hint="@string/hint_name"
+        android:importantForAutofill="no"
         android:inputType="text"
         android:padding="15dp"
         android:textSize="15sp"
@@ -94,6 +83,7 @@
         android:layout_marginStart="68dp"
         android:background="@drawable/edit_input"
         android:hint="@string/hint_email"
+        android:importantForAutofill="no"
         android:inputType="text"
         android:padding="15dp"
         android:textSize="15sp"
@@ -111,7 +101,8 @@
         android:layout_height="48dp"
         android:layout_marginStart="68dp"
         android:background="@drawable/edit_input"
-        android:hint="@string/hint_email"
+        android:hint="@string/hint_address"
+        android:importantForAutofill="no"
         android:inputType="text"
         android:padding="15dp"
         android:textSize="15sp"
@@ -130,7 +121,8 @@
         android:layout_marginStart="68dp"
         android:background="@drawable/edit_input"
         android:hint="@string/hint_password"
-        android:inputType="text"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
         android:padding="15dp"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -148,7 +140,8 @@
         android:layout_marginStart="68dp"
         android:background="@drawable/edit_input"
         android:hint="@string/hint_cfpassword"
-        android:inputType="text"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
         android:padding="15dp"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -158,6 +151,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.871"
         tools:ignore="TextFields,TextContrastCheck" />
+
+
+    <Button
+        android:id="@+id/signupButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/signup_button"
+        android:textSize="30sp"
+        android:background="@android:color/transparent"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
 
     <Button
         android:id="@+id/backButton"
@@ -171,6 +182,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="RtlHardcoded,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,7 @@
         android:layout_height="290dp"
         android:fontFamily="@font/italianno_regular"
         android:gravity="center"
-        android:text="Juney\nScented Candles"
+        android:text="@string/startup_display"
         android:textColor="#d9c5fa"
         android:textSize="90sp"
         android:textStyle="bold"
