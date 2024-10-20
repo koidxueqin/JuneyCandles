@@ -10,7 +10,7 @@
         android:layout_height="73dp"
         android:fontFamily="@font/italianno_regular"
         android:gravity="center"
-        android:text="Juney"
+        android:text="@string/juney_display"
         android:textColor="#d9c5fa"
         android:textSize="50sp"
         android:textStyle="bold"
