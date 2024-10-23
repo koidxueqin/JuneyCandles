@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
 
-        <shape android:shape="rectangle">
-        <!-- Rounded rectangle shape -->
-             <corners android:radius="20dp" />
+    <!-- Rounded corners -->
+    <corners android:radius="24dp" />
 
-        <!-- Solid background color (purple) -->
-             <solid android:color="#e7ddf9 " /> <!-- Hex code for purple -->
+    <!-- Solid background color (light purple) -->
+    <solid android:color="#D9C5FA" />
 
+    <!-- Optional: Add a dark purple border around the EditText -->
+    <!--<stroke
+        android:width="2dp"
+        android:color="#5e005e" />
 
+    <!- Optional: Add padding inside the EditText -->
+    <padding
+        android:left="8dp"
+        android:right="8dp"
+        android:top="8dp"
+        android:bottom="8dp" />
 
-
-        </shape>
-    </item>
-</selector>
+</shape>
