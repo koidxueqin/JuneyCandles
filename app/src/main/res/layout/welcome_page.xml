@@ -4,6 +4,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -13,7 +14,7 @@
         android:fontFamily="@font/italianno_regular"
         android:gravity="center"
         android:text="@string/juney_display"
-        android:textColor="#d9c5fa"
+        android:textColor="@color/purple"
         android:textSize="70sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

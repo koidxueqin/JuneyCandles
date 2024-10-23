@@ -7,13 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <TextView
         android:layout_width="406dp"
         android:layout_height="290dp"
         android:fontFamily="@font/italianno_regular"
         android:gravity="center"
         android:text="@string/startup_display"
-        android:textColor="#d9c5fa"
+        android:textColor="@color/purple"
         android:textSize="90sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -8,7 +8,7 @@ dependencies {
 
 android {
     namespace = "com.example.juneycandles"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.juneycandles"
@@ -36,13 +36,18 @@ android {
 }
 
 dependencies {
+
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    implementation(libs.sqlite)  // Add this SQLite implementation
+    implementation(libs.sqlite)
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
-    androidTestImplementation(libs.espresso.core)
+
+
+
+
 }

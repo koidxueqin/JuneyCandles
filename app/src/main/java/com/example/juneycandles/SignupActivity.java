@@ -5,15 +5,19 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Patterns;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import android.util.Log;
+import androidx.annotation.Nullable;
 
 public class SignupActivity extends AppCompatActivity {
 
     private EditText phoneInput, nameInput, emailInput, addressInput, passwordInput, confirmInput;
-    private SQLiteDatabase database;
+    private DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,65 +32,60 @@ public class SignupActivity extends AppCompatActivity {
         passwordInput = findViewById(R.id.passwordInput);
         confirmInput = findViewById(R.id.confirmInput);
         Button signupButton = findViewById(R.id.signupButton);
-        Button backButton = findViewById(R.id.backButton);
+        Button backButton = findViewById(R.id.backButton); // Initialize backButton
+        dbHelper = new DBHelper(this);
 
-        // Initialize database
-        DatabaseHelper dbHelper = new DatabaseHelper(this);
-        database = dbHelper.getWritableDatabase();
 
-        // Set onClick listener for the signup button
-        signupButton.setOnClickListener(v -> signupUser());
+        // Check database connection
+        boolean isConnected = dbHelper.isDatabaseConnected();
+        if (isConnected) {
+            Toast.makeText(this, "Database connection is successful!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Database connection failed!", Toast.LENGTH_SHORT).show();
+        }
 
-        // Set onClick listener for the back button
+
+        // Set up the backButton click listener
         backButton.setOnClickListener(v -> {
-            // Navigate back to the login page
-            Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+            Intent intent = new Intent(SignupActivity.this, LoginActivity.class); // Replace LoginActivity with your actual login activity name
             startActivity(intent);
-            finish(); // Finish current activity to remove it from the back stack
+            finish(); // Optional: Call finish() if you want to remove the SignupActivity from the back stack
+        });
+
+        signupButton.setOnClickListener(v -> {
+            String name, phone, email, address, pwd, cfpwd;
+            name = nameInput.getText().toString();
+            phone = phoneInput.getText().toString();
+            email = emailInput.getText().toString();
+            address = addressInput.getText().toString();
+            pwd = passwordInput.getText().toString();
+            cfpwd = confirmInput.getText().toString();
+
+            if (name.isEmpty() || phone.isEmpty() || email.isEmpty() || address.isEmpty() || pwd.isEmpty() || cfpwd.isEmpty()) {
+                Toast.makeText(SignupActivity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+            } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                Toast.makeText(SignupActivity.this, "Please enter a valid email address.", Toast.LENGTH_SHORT).show();
+            } else {
+                if (pwd.equals(cfpwd)) {
+                    if (dbHelper.checkUser(phone)) {
+                        Toast.makeText(SignupActivity.this, "This phone is already registered.", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    // Proceed with registration
+                    boolean signupSuccess = dbHelper.insertData(name, phone, email, address, pwd);
+                    if (signupSuccess) {
+                        // Navigate to WelcomeActivity and pass the user's name
+                        Intent welcomeIntent = new Intent(SignupActivity.this, WelcomeActivity.class);
+                        welcomeIntent.putExtra("userName", name); // Pass the user's name
+                        startActivity(welcomeIntent);
+                        finish(); // Finish SignupActivity
+                        Toast.makeText(SignupActivity.this, "Signed Up Successfully!", Toast.LENGTH_SHORT).show();
+                    }else
+                        Toast.makeText(SignupActivity.this, "Sign Up Failed. Please try again.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(SignupActivity.this, "Confirm password does not match Password.", Toast.LENGTH_SHORT).show();
+                }
+            }
         });
     }
-
-    private void signupUser() {
-        // Get input values
-        String phone = phoneInput.getText().toString().trim();
-        String name = nameInput.getText().toString().trim();
-        String email = emailInput.getText().toString().trim();
-        String address = addressInput.getText().toString().trim();
-        String password = passwordInput.getText().toString().trim();
-        String confirmPassword = confirmInput.getText().toString().trim();
-
-        // Validate input fields
-        if (TextUtils.isEmpty(phone) || TextUtils.isEmpty(name) ||
-                TextUtils.isEmpty(email) || TextUtils.isEmpty(address) ||
-                TextUtils.isEmpty(password) || TextUtils.isEmpty(confirmPassword)) {
-            Toast.makeText(this, "Please input all fields.", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        // Check if passwords match
-        if (!password.equals(confirmPassword)) {
-            Toast.makeText(this, "Confirm Password does not match.", Toast.LENGTH_SHORT).show(); // Updated error message
-            return;
-        }
-
-        // Save user information in the database
-        ContentValues values = new ContentValues();
-        values.put("phone_no", phone);
-        values.put("name", name);
-        values.put("email", email);
-        values.put("password", password);
-        values.put("address", address);
-
-        long newRowId = database.insert("Customer", null, values);
-        if (newRowId != -1) {
-            Toast.makeText(this, "Sign up successful!", Toast.LENGTH_SHORT).show();
-            // Navigate to welcome page
-            Intent intent = new Intent(SignupActivity.this, WelcomeActivity.class);
-            startActivity(intent);
-            finish();
-        } else {
-            Toast.makeText(this, "Sign up failed. Please try again.", Toast.LENGTH_SHORT).show();
-        }
-    }
-
 }

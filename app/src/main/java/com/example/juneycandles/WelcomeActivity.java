@@ -14,16 +14,14 @@ public class WelcomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.welcome_page); // Set the layout to welcome_page.xml
+        //setting layout
+        setContentView(R.layout.welcome_page);
 
         TextView userNameText = findViewById(R.id.userNameText);
 
-        // Initialize database
-        DatabaseHelper dbHelper = new DatabaseHelper(this);
-        database = dbHelper.getReadableDatabase();
+        // Get the user's name from the Intent
+        String userName = getIntent().getStringExtra("userName");
 
-        // Fetch user's name from the database
-        String userName = getUserName(); // Implement this method to fetch the name
         if (userName != null) {
             userNameText.setText(userName); // Set the user's name
         }
@@ -39,7 +37,7 @@ public class WelcomeActivity extends AppCompatActivity {
     private String getUserName() {
         String name = null;
         // Query to fetch the user's name based on the last inserted entry or specific criteria
-        Cursor cursor = database.rawQuery("SELECT name FROM Customer ORDER BY cust_id DESC LIMIT 1", null);
+        Cursor cursor = database.rawQuery("SELECT name FROM Customer ORDER BY phone_no DESC LIMIT 1", null);
 
             if (cursor.moveToFirst()) {
                 int nameIndex = cursor.getColumnIndex("name"); // Get the index of the column
