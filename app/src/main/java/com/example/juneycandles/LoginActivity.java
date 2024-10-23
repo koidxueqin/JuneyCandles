@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
     DBHelper dbHelper;
-    Button btnLogin;
+    Button btnLogin, forgotPwdBtn;
     EditText numberLogin, passwordLogin;
 
     @Override
@@ -43,6 +43,24 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "Login Failed. Incorrect phone number or password.", Toast.LENGTH_SHORT).show();
             }}
         });
+
+        // Find the "Forgot Password" button
+        forgotPwdBtn = findViewById(R.id.forgot_pwd);
+
+        // Set OnClickListener on the "Forgot Password" button
+        forgotPwdBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Redirect to ForgotPassword activity
+                Intent intent = new Intent(LoginActivity.this, ForgotPassword.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
 
         // Find the "SIGN UP" Button by its ID
         Button signUpButton = findViewById(R.id.signUp);  // Make sure R.id.signUp matches the ID in your layout XML

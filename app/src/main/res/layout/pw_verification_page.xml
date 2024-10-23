@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background=""
+    android:background="@android:color/transparent"
     android:padding="16dp">
 
     <!-- Empty Number Input Boxes (Code Inputs) -->
     <EditText
         android:id="@+id/code1_input"
-        android:layout_width="67dp"
+        android:layout_width="wrap_content"
         android:layout_height="57dp"
         android:layout_marginTop="368dp"
         android:background="@drawable/edit_input"
@@ -18,7 +18,7 @@
         android:minHeight="48dp"
         android:padding="12dp"
         android:textSize="15sp"
-        android:hint="Code1"
+        android:hint="@string/code1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
 
     <EditText
         android:id="@+id/code2_input"
-        android:layout_width="67dp"
+        android:layout_width="wrap_content"
         android:layout_height="57dp"
         android:layout_marginTop="368dp"
         android:background="@drawable/edit_input"
@@ -35,7 +35,7 @@
         android:minHeight="48dp"
         android:padding="12dp"
         android:textSize="15sp"
-        android:hint="Code2"
+        android:hint="@string/code2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.365"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
 
     <EditText
         android:id="@+id/code3_input"
-        android:layout_width="67dp"
+        android:layout_width="wrap_content"
         android:layout_height="57dp"
         android:layout_marginTop="368dp"
         android:background="@drawable/edit_input"
@@ -52,7 +52,7 @@
         android:minHeight="48dp"
         android:padding="12dp"
         android:textSize="15sp"
-        android:hint="Code3"
+        android:hint="@string/code3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.673"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +60,7 @@
 
     <EditText
         android:id="@+id/code4_input"
-        android:layout_width="67dp"
+        android:layout_width="wrap_content"
         android:layout_height="57dp"
         android:layout_marginTop="368dp"
         android:background="@drawable/edit_input"
@@ -68,7 +68,7 @@
         android:minHeight="48dp"
         android:padding="12dp"
         android:textSize="15sp"
-        android:hint="Code4"
+        android:hint="@string/code4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.964"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +80,7 @@
         android:layout_height="120dp"
         android:fontFamily="@font/italianno_regular"
         android:gravity="center"
-        android:text="@string/juney"
+        android:text="@string/juney_display"
         android:textColor="#D9C5FA"
         android:textSize="70sp"
         android:textStyle="bold"
@@ -94,13 +94,13 @@
     <!-- Verification Message Text -->
     <TextView
         android:id="@+id/pw_verification_title"
-        android:layout_width="290dp"
-        android:layout_height="83dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="268dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="@string/verification_code_has_sent_to_this_email"
+        android:text="@string/verify_message"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"

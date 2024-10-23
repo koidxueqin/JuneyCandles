@@ -8,19 +8,6 @@
     tools:context=".MainActivity">
 
 
-    <Button
-        android:id="@+id/backIcon"
-        android:layout_width="54dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="40dp"
-        android:background="@android:color/transparent"
-        android:drawableTop="@drawable/arrow"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.072"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
     <ImageView
         android:id="@+id/userIcon"
         android:layout_width="63dp"
@@ -38,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Username"
+        android:text="@string/username"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Point Redemption"
+        android:text="@string/point_redeem"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/view2"
@@ -70,6 +57,20 @@
         app:layout_constraintVertical_bias="0.188" />
 
 
+    <TextView
+        android:id="@+id/point"
+        android:layout_width="111dp"
+        android:layout_height="26dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/quicksand_variable"
+        android:text="@string/point"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
@@ -79,13 +80,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/birthday_title"
         android:layout_width="111dp"
         android:layout_height="26dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/quicksand_variable"
-        android:text="Birthday"
+        android:text="@string/birthday"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/birthday_input"
@@ -93,8 +95,7 @@
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2"
-        app:layout_constraintVertical_bias="0.175" />
-
+        app:layout_constraintVertical_bias="0.888" />
 
     <TextView
         android:id="@+id/email_title"
@@ -102,7 +103,7 @@
         android:layout_height="26dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/quicksand_variable"
-        android:text="Email"
+        android:text="@string/email"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -116,8 +117,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="56dp"
         android:background="@drawable/edit_input"
-        android:hint="birthday"
-        android:inputType="text|date"
+        android:hint="@string/hint_birthday"
         android:minHeight="48dp"
         android:padding="12dp"
         android:textSize="15sp"
@@ -131,8 +131,7 @@
         android:layout_width="363dp"
         android:layout_height="48dp"
         android:background="@drawable/edit_input"
-        android:hint="email"
-        android:inputType="textEmailAddress"
+        android:hint="@string/hint_email"
         android:minHeight="48dp"
         android:padding="12dp"
         android:textSize="15sp"
@@ -147,7 +146,7 @@
         android:layout_height="26dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/quicksand_variable"
-        android:text="Address"
+        android:text="@string/address"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -160,8 +159,7 @@
         android:layout_width="342dp"
         android:layout_height="48dp"
         android:background="@drawable/edit_input"
-        android:hint="address"
-        android:inputType="textPostalAddress"
+        android:hint="@string/hint_address"
         android:minHeight="48dp"
         android:padding="12dp"
         android:textSize="15sp"
@@ -176,7 +174,7 @@
         android:layout_height="55dp"
         android:background="@android:color/transparent"
         android:padding="12dp"
-        android:text="Logout"
+        android:text="@string/logout"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -191,7 +189,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        android:text="Edit"
+        android:text="@string/edit"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
