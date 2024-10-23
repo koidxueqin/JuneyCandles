@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+
+
+    <!-- Container for scrollable content -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="0dp">
+
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/zodiacSign"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:src="@drawable/zodiac"
+                android:contentDescription="@string/zodiac"
+                android:scaleType="centerCrop"
+                android:layout_margin="0dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/open_sans"
+                android:text="@string/zodiac"
+                android:textColor="@color/white"
+                android:textSize="35sp" />
+
+            <TextView
+                android:layout_width="171dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/bebas_neue"
+                android:text="@string/new_collection"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="italic" />
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/season"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_margin="0dp"
+                android:contentDescription="@string/season"
+                android:scaleType="centerCrop"
+                android:src="@drawable/season" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center"
+                android:fontFamily="@font/amiri_bold"
+                android:text="@string/season"
+                android:textColor="@color/white"
+                android:textSize="35sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/open_sans"
+                android:text="@string/season_desc"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/relaxing"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_margin="0dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/holiday"
+                android:contentDescription="@string/holiday"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/holiday"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/amiri"/>
+
+            <TextView
+                android:layout_width="157dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="25sp"
+                android:fontFamily="@font/bebas_neue"
+                android:text="@string/holiday_desc"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:textSize="18sp" />
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/woodsy"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_margin="0dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/mood"
+                android:contentDescription="@string/mood"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mood"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_semibold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mood_desc"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="50dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_semibold"/>
+
+        </FrameLayout>
+
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>

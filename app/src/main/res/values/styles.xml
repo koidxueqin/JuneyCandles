@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomTab" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">15sp</item> <!-- Set your desired text size -->
+        <item name="android:textColor">@color/black</item> <!-- Optional: Set text color -->
+        <item name="android:fontFamily">@font/poppins_bold</item> <!-- Set your custom font -->
+    </style>
+    
+
+    
+    
+</resources>
