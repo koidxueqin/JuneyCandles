@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#FFFFFF">  <!-- Optional: background color -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/our_story_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Our Story"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="16dp" />
+
+        <!-- Image (Optional) -->
+        <ImageView
+            android:id="@+id/our_story_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/our_story"
+            android:contentDescription="Our Story Image"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Story Content -->
+        <TextView
+            android:id="@+id/our_story_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Our journey started with a passion for quality and a commitment to bringing people together. Over the years, we’ve grown into a team dedicated to providing memorable experiences through our products, crafted with care and precision. Join us on this journey as we continue to evolve and make an impact."
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:lineSpacingExtra="4dp"
+            android:paddingBottom="16dp" />
+
+        <!-- Additional Content (optional) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thank you for being a part of our story. We’re excited to share this journey with you and look forward to what the future holds."
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:lineSpacingExtra="4dp" />
+
+    </LinearLayout>
+</ScrollView>
