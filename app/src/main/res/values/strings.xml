@@ -58,5 +58,6 @@
     <string name="username">Username</string>
     <string name="saveBtn">Save</string>
     <string name="edit">Edit</string>
+    <string name="back_to_fragment_about">back_to_fragment_about</string>
 
 </resources>

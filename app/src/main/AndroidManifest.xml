@@ -29,6 +29,11 @@
         <activity android:name=".ForgotPassword"/>
         <activity android:name=".PassVerification"/>
         <activity android:name=".EditProfile"/>
+        <activity android:name=".OurStory" />
+        <activity android:name=".TheTeam" />
+        <activity android:name=".ContactUs" />
+
+
 
 
 
