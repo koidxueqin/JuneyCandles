@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/purple">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/backIcon"
+            android:layout_width="54dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/arrow"
+            android:contentDescription="@string/back_to_fragment_about"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.072"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/contact_us_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Us"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="16dp" />
+
+        <!-- Address -->
+        <TextView
+            android:id="@+id/contact_us_address_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Our Address"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#555555"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/contact_us_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1234 Business Park Georgetown, Penang"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:paddingBottom="16dp" />
+
+        <!-- Phone -->
+        <TextView
+            android:id="@+id/contact_us_phone_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#555555"
+            android:paddingBottom="8dp" />
+
+        <!-- Email -->
+
+        <TextView
+            android:id="@+id/contact_us_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="phone"
+            android:paddingBottom="16dp"
+            android:text="+60 194790720"
+            android:textColor="#666666"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/contact_us_email_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#555555"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/contact_us_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="juneycandles123@gmail.com"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:autoLink="email"
+            android:paddingBottom="16dp" />
+
+        <!-- Additional Information (optional) -->
+        <TextView
+            android:id="@+id/contact_us_additional_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feel free to reach out to us with any questions or concerns. Our team is here to assist you!"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:lineSpacingExtra="4dp"
+            android:paddingBottom="16dp" />
+
+    </LinearLayout>
+
+</ScrollView>

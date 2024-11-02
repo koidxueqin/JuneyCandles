@@ -20,12 +20,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/ourStory"
                 android:layout_width="match_parent"
                 android:layout_height="260dp"
                 android:src="@drawable/story"
                 android:contentDescription="@string/zodiac"
+                android:background="@android:color/transparent"
                 android:scaleType="centerCrop"
                 android:layout_margin="0dp"/>
 <!--section 1 text-->
@@ -49,12 +50,13 @@
 
 
             <!--section 2 text-->
-            <ImageView
+            <ImageButton
                 android:id="@+id/theTeam"
                 android:layout_width="match_parent"
                 android:layout_height="260dp"
                 android:layout_margin="0dp"
                 android:contentDescription="@string/season"
+                android:background="@android:color/transparent"
                 android:scaleType="centerCrop"
                 android:src="@drawable/team" />
 
@@ -74,14 +76,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/contactUs"
                 android:layout_width="match_parent"
                 android:layout_height="260dp"
                 android:layout_margin="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/contact"
-                android:contentDescription="@string/contact"/>
+                android:contentDescription="@string/contact"
+                android:background="@android:color/transparent"/>
 <!--section 3 text-->
             <TextView
                 android:layout_width="wrap_content"

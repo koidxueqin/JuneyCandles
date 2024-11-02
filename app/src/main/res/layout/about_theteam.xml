@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/purple">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/backIcon"
+            android:layout_width="54dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/arrow"
+            android:contentDescription="@string/back_to_fragment_about"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.072"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/the_team_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Meet The Team"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="16dp" />
+
+        <!-- Image (Optional) -->
+        <ImageView
+            android:id="@+id/the_team_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/the_team"
+            android:contentDescription="Team Image"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Team Description Content -->
+        <TextView
+            android:id="@+id/the_team_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Our team is a group of dedicated professionals who bring passion and expertise to everything we do. With diverse backgrounds and a shared commitment to excellence, each team member contributes to our vision of creating exceptional products and experiences for our customers."
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:lineSpacingExtra="4dp"
+            android:paddingBottom="16dp" />
+
+        <!-- Additional Content (optional) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="We believe in collaboration, innovation, and integrity. Meet the people behind the brand, each bringing their unique skills and perspectives to help us grow and succeed."
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:lineSpacingExtra="4dp" />
+
+    </LinearLayout>
+</ScrollView>
