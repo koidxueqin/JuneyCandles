@@ -16,11 +16,12 @@
 
         <!-- Image content -->
 
-        <ImageView
+        <ImageButton
             android:id="@+id/floral"
             android:layout_width="match_parent"
             android:layout_height="260dp"
             android:layout_margin="0dp"
+            android:background="@android:color/transparent"
             android:contentDescription="@string/floral"
             android:scaleType="centerCrop"
             android:src="@drawable/floral" />
@@ -29,14 +30,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/fruity"
                 android:layout_width="match_parent"
                 android:layout_height="260dp"
                 android:src="@drawable/fruit"
                 android:contentDescription="@string/floral"
                 android:scaleType="centerCrop"
-                android:layout_margin="0dp"/>
+                android:background="@android:color/transparent"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -55,11 +57,12 @@
             android:layout_height="wrap_content">
 
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/gourmand"
                 android:layout_width="match_parent"
                 android:layout_height="260dp"
                 android:layout_margin="0dp"
+                android:background="@android:color/transparent"
                 android:contentDescription="@string/gourmand"
                 android:scaleType="centerCrop"
                 android:src="@drawable/gourmand" />
@@ -79,12 +82,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/woodsy"
                 android:layout_width="match_parent"
                 android:layout_height="260dp"
                 android:layout_margin="0dp"
                 android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
                 android:src="@drawable/wood"
                 android:contentDescription="@string/wood"/>
 
@@ -105,11 +109,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/relaxing"
                 android:layout_width="match_parent"
                 android:layout_height="260dp"
                 android:layout_margin="0dp"
+                android:background="@android:color/transparent"
                 android:scaleType="centerCrop"
                 android:src="@drawable/relaxing"
                 android:contentDescription="@string/relaxing"/>

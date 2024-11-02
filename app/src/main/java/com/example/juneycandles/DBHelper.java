@@ -9,11 +9,6 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 
 public class DBHelper extends SQLiteOpenHelper {
     public static final String DBName = "JuneyCandlesDB.db";
