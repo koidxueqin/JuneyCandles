@@ -27,7 +27,7 @@
                 android:layout_gravity="top|center"
                 android:layout_marginStart="38dp"
                 android:layout_marginTop="10dp"
-                android:text="@string/product_name"
+                android:text="product_name"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -36,7 +36,7 @@
                 android:layout_width="150dp"
                 android:layout_height="203dp"
                 android:scaleType="centerCrop"
-                android:contentDescription="@string/product_image"
+                android:contentDescription="product_image"
                 app:shapeAppearanceOverlay="@style/RoundedCornersImageView"/>
 
             <TextView
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center"
                 android:layout_marginBottom="10dp"
-                android:text="@string/product_price"
+                android:text="product_price"
                 android:textSize="16sp" />
         </FrameLayout>
 

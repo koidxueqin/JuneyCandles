@@ -9,6 +9,7 @@ material = "1.12.0"
 activity = "1.9.3"
 constraintlayout = "2.1.4"
 sqlite = "2.4.0"
+navigationFragment = "2.8.3"
 
 [libraries]
 fragment = { module = "androidx.fragment:fragment", version.ref = "fragVersion" }
@@ -20,6 +21,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 sqlite = { group = "androidx.sqlite", name = "sqlite", version.ref = "sqlite" }
+navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
