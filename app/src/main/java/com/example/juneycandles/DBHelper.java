@@ -76,5 +76,10 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
+    public Cursor getUserByPhone(String phone_no) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        // Execute a query to retrieve the user by phone number
+        return db.rawQuery("SELECT * FROM Customer WHERE phone_no = ?", new String[]{phone_no});
+    }
 
 }
