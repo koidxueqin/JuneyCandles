@@ -16,15 +16,6 @@
 
         <!-- Image content -->
 
-        <ImageButton
-            android:id="@+id/floral"
-            android:layout_width="match_parent"
-            android:layout_height="260dp"
-            android:layout_margin="0dp"
-            android:background="@android:color/transparent"
-            android:contentDescription="@string/floral"
-            android:scaleType="centerCrop"
-            android:src="@drawable/floral" />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -105,31 +96,6 @@
         </FrameLayout>
 
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/relaxing"
-                android:layout_width="match_parent"
-                android:layout_height="260dp"
-                android:layout_margin="0dp"
-                android:background="@android:color/transparent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/relaxing"
-                android:contentDescription="@string/relaxing"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/relaxing"
-                android:textColor="@color/white"
-                android:textSize="42sp"
-                android:layout_gravity="center"
-                android:fontFamily="@font/open_sans"/>
-
-
-        </FrameLayout>
 
 
     </LinearLayout>
