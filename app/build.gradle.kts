@@ -42,6 +42,7 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation(libs.sqlite)
+    implementation(libs.navigation.fragment)
 
 
     testImplementation(libs.junit)
