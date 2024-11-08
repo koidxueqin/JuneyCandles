@@ -62,5 +62,6 @@
     <string name="pdesc">Product Desc</string>
     <string name="pprice">Product Price</string>
     <string name="pimg">Product Image</string>
+    <string name="back_to_fragment_about">back_to_fragment_about</string>
 
 </resources>
