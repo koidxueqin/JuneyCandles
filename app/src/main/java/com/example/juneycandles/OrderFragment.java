@@ -21,11 +21,8 @@ public class OrderFragment extends Fragment {
         Button backButton = view.findViewById(R.id.backIcon);
 
         // Set an OnClickListener for the back button to return to HomePageActivity
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().finish();  // Closes the current fragment's activity and returns to HomePageActivity
-            }
+        backButton.setOnClickListener(v -> {
+            requireActivity().finish();  // Closes the current fragment's activity and returns to HomePageActivity
         });
 
         return view;

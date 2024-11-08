@@ -17,7 +17,7 @@ public class FruityFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_floral, container, false);
+        View view = inflater.inflate(R.layout.fragment_fruity, container, false);
 
         // Find the back button and set the click listener
         Button backIcon = view.findViewById(R.id.backIcon);
