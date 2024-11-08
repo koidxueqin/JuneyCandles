@@ -58,5 +58,8 @@
     <string name="username">Username</string>
     <string name="saveBtn">Save</string>
     <string name="edit">Edit</string>
+    <string name="product_name">Product Name</string>
+    <string name="product_image">Product Image</string>
+    <string name="product_price">Product Price</string>
 
 </resources>
