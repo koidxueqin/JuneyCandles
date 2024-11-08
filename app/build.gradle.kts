@@ -43,6 +43,7 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.sqlite)
     implementation(libs.navigation.fragment)
+    implementation(libs.play.services.analytics.impl)
 
 
     testImplementation(libs.junit)

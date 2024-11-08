@@ -10,6 +10,7 @@ activity = "1.9.3"
 constraintlayout = "2.1.4"
 sqlite = "2.4.0"
 navigationFragment = "2.8.3"
+playServicesAnalyticsImpl = "18.2.0"
 
 [libraries]
 fragment = { module = "androidx.fragment:fragment", version.ref = "fragVersion" }
@@ -22,6 +23,7 @@ activity = { group = "androidx.activity", name = "activity", version.ref = "acti
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 sqlite = { group = "androidx.sqlite", name = "sqlite", version.ref = "sqlite" }
 navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
+play-services-analytics-impl = { group = "com.google.android.gms", name = "play-services-analytics-impl", version.ref = "playServicesAnalyticsImpl" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

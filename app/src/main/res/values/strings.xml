@@ -60,5 +60,7 @@
     <string name="edit">Edit</string>
     <string name="pname">Product Name</string>
     <string name="pdesc">Product Desc</string>
+    <string name="pprice">Product Price</string>
+    <string name="pimg">Product Image</string>
 
 </resources>

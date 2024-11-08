@@ -28,8 +28,6 @@
         <activity android:name=".WelcomeActivity"/>
         <activity android:name=".ForgotPassword"/>
         <activity android:name=".PassVerification"/>
-        <activity android:name=".EditProfile"/>
-
 
 
 

@@ -1,64 +1,68 @@
 package com.example.juneycandles;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ZodiacFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ZodiacFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private ProductAdapter productAdapter;
+    private List<Product> productList;
 
     public ZodiacFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ZodiacFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ZodiacFragment newInstance(String param1, String param2) {
-        ZodiacFragment fragment = new ZodiacFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_zodiac, container, false);
+
+        RecyclerView recyclerView = rootView.findViewById(R.id.recyclerViewZodiac);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        productList = new ArrayList<>();
+        productAdapter = new ProductAdapter(productList);
+        recyclerView.setAdapter(productAdapter);
+
+        // Fetch data from the database
+        fetchProductsFromDatabase();
+
+        return rootView;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    private void fetchProductsFromDatabase() {
+        SQLiteDatabase db = new DBHelper(getContext()).getReadableDatabase();
+        Cursor cursor = db.query("Products", null, null, null, null, null, "product_id ASC");
+
+        if (cursor != null && cursor.moveToFirst()) {
+            try {
+                do {
+                    int productId = cursor.getInt(cursor.getColumnIndexOrThrow("product_id"));
+                    String productName = cursor.getString(cursor.getColumnIndexOrThrow("product_name"));
+                    double productPrice = cursor.getDouble(cursor.getColumnIndexOrThrow("product_price"));
+                    String productImg = cursor.getString(cursor.getColumnIndexOrThrow("product_img"));
+
+                    productList.add(new Product(productId, productName, productPrice, productImg));
+                } while (cursor.moveToNext());
+            } catch (IllegalArgumentException e) {
+                Log.e("ZodiacFragment", "Column not found: " + e.getMessage());
+            } finally {
+                cursor.close();
+            }
         }
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_zodiac, container, false);
+        productAdapter.notifyDataSetChanged();
     }
 }
