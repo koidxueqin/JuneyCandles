@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import androidx.fragment.app.Fragment;
 
-public class FloralFragment extends Fragment {
+public class FruityFragment extends Fragment {
 
-    public FloralFragment() {
+    public FruityFragment() {
         // Required empty public constructor
     }
 

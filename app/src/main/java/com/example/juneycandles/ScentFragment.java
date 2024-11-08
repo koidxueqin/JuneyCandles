@@ -20,16 +20,14 @@ public class ScentFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_scent, container, false);
 
         // find the image button
-        ImageButton floralImage = view.findViewById(R.id.floral);
+        ImageButton fruityImage = view.findViewById(R.id.fruity);
 
         // Set an OnClickListener on the button
-        floralImage.setOnClickListener(v -> {
-            // Check if the activity is not null before proceeding
+        fruityImage.setOnClickListener(v -> {
             if (getActivity() != null) {
-                // Replace the ScentFragment with FloralFragment
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.outerFrame, new FloralFragment())
-                        .addToBackStack(null) // Allow going back to ScentFragment
+                        .replace(R.id.outerFrame, new FruityFragment())
+                        .addToBackStack(null)
                         .commit();
             }
         });
