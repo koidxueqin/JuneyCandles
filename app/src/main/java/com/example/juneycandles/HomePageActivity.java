@@ -25,7 +25,7 @@ public class HomePageActivity extends AppCompatActivity {
 
         // Add tabs and set icons
         addTabWithIcon(tabLayout.newTab(), R.drawable.heart_border, ""); // Use empty text
-        addTabWithIcon(tabLayout.newTab(), R.drawable.home, ""); // Use empty text
+        addTabWithIcon(tabLayout.newTab(), R.drawable.home_button, ""); // Use empty text
         addTabWithIcon(tabLayout.newTab(), R.drawable.user, ""); // Use empty text
 
         // Set the default selected tab to the second tab (index 1)

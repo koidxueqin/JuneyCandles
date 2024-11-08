@@ -63,5 +63,6 @@
     <string name="pprice">Product Price</string>
     <string name="pimg">Product Image</string>
     <string name="back_to_fragment_about">back_to_fragment_about</string>
+    <string name="back_to_home">back_to_home</string>
 
 </resources>
