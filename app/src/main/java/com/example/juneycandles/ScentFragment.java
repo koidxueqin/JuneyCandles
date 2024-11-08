@@ -25,6 +25,7 @@ public class ScentFragment extends Fragment {
         // Set an OnClickListener on the button
         fruityImage.setOnClickListener(v -> {
             if (getActivity() != null) {
+
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.outerFrame, new FruityFragment())
                         .addToBackStack(null)
