@@ -1,10 +1,8 @@
 package com.example.juneycandles;
 
 import android.os.Bundle;
-import android.view.Menu;
 import android.widget.FrameLayout;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -24,8 +22,8 @@ public class HomePageActivity extends AppCompatActivity {
         frameLayout = findViewById(R.id.outerFrame);
 
         // Add tabs and set icons
-        addTabWithIcon(tabLayout.newTab(), R.drawable.heart_border, ""); // Use empty text
-        addTabWithIcon(tabLayout.newTab(), R.drawable.home, ""); // Use empty text
+        addTabWithIcon(tabLayout.newTab(), R.drawable.list, ""); // Use empty text
+        addTabWithIcon(tabLayout.newTab(), R.drawable.home_button, ""); // Use empty text
         addTabWithIcon(tabLayout.newTab(), R.drawable.user, ""); // Use empty text
 
         // Set the default selected tab to the second tab (index 1)
@@ -45,7 +43,7 @@ public class HomePageActivity extends AppCompatActivity {
                Fragment fragment = null;
                 switch(tab.getPosition()){
                     case 0:
-                        fragment = new FavFragment();
+                        fragment = new OrderFragment();
                         break;
                     case 1:
                         fragment = new MenuFragment();
