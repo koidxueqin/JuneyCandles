@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.tabs.TabLayout;
 
+
 public class HomePageActivity extends AppCompatActivity {
     TabLayout tabLayout;
     FrameLayout frameLayout;
