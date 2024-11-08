@@ -21,7 +21,7 @@ Existing platforms offer some degree of customization but often fall short in te
 - Python: Python 3.6 or later
 Required Libraries
 - Android Studio: For the graphical user interface for a Android application
-- MySQL: For interacting with data
+- SQLite: For interacting with data
 
 ### Installing
 
