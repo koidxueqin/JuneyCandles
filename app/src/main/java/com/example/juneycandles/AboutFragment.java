@@ -49,7 +49,7 @@ public class AboutFragment extends Fragment {
         ourStoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), OurStory.class);
+                Intent intent = new Intent(getActivity(), OurStoryFragment.class);
                 startActivity(intent);
             }
         });
@@ -60,7 +60,7 @@ public class AboutFragment extends Fragment {
         theTeamButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), TheTeam.class);
+                Intent intent = new Intent(getActivity(), OurTeamFragment.class);
                 startActivity(intent);
             }
         });
@@ -69,7 +69,7 @@ public class AboutFragment extends Fragment {
         contactUsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ContactUs.class);
+                Intent intent = new Intent(getActivity(), ContactUsFragment.class);
                 startActivity(intent);
             }
         });
