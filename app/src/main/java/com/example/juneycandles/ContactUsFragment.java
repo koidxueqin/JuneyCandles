@@ -5,12 +5,12 @@ import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ContactUs extends AppCompatActivity {
+public class ContactUsFragment extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.about_contactus);
+        setContentView(R.layout.fragment_contact_us);
 
         // Find the back button by ID, if you have one in your layout
         Button backButton = findViewById(R.id.backIcon);

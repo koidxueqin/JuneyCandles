@@ -5,21 +5,21 @@ import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class OurStory extends AppCompatActivity {
+public class OurTeamFragment extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.about_ourstory);
+        setContentView(R.layout.fragment_our_team);
 
         // Find the back button by ID
         Button backIcon = findViewById(R.id.backIcon);
 
-        // Set an OnClickListener for the back button
+        // Set an OnClickListener for the back button to go back to AboutFragment
         backIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();  // Closes the activity and returns to the previous fragment (AboutFragment)
+                finish();  // Closes the activity and returns to AboutFragment
             }
         });
     }
