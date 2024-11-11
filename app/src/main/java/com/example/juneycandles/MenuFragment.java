@@ -66,5 +66,7 @@ public class MenuFragment extends Fragment {
         public int getItemCount() {
             return 3; // Total number of tabs/fragments
         }
+
+
     }
 }

@@ -23,11 +23,18 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="25dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="70dp"
-        android:scrollbars="vertical" />
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:scrollbars="vertical"
+            android:padding="12dp"/>
+
+    </RelativeLayout>
 
 </FrameLayout>

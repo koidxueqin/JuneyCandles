@@ -20,12 +20,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/zodiacSign"
                 android:layout_width="match_parent"
                 android:layout_height="260dp"
                 android:src="@drawable/zodiac"
-                android:background="@android:color/transparent"
                 android:contentDescription="@string/zodiac"
                 android:scaleType="centerCrop"
                 android:layout_margin="0dp"/>
@@ -59,12 +58,11 @@
             android:layout_height="wrap_content">
 
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/season"
                 android:layout_width="match_parent"
                 android:layout_height="260dp"
                 android:layout_margin="0dp"
-                android:background="@android:color/transparent"
                 android:contentDescription="@string/season"
                 android:scaleType="centerCrop"
                 android:src="@drawable/season" />
@@ -96,12 +94,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/relaxing"
                 android:layout_width="match_parent"
                 android:layout_height="260dp"
                 android:layout_margin="0dp"
-                android:background="@android:color/transparent"
                 android:scaleType="centerCrop"
                 android:src="@drawable/holiday"
                 android:contentDescription="@string/holiday"/>
@@ -126,11 +123,8 @@
                 android:layout_gravity="center"
                 android:textSize="18sp" />
 
+
         </FrameLayout>
-
-
-
-
 
 
 

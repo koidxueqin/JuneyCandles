@@ -37,4 +37,3 @@ public class ScentFragment extends Fragment {
     }
 
 }
-

@@ -1,13 +1,13 @@
 package com.example.juneycandles;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
@@ -18,11 +18,15 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_page);  // sets content to login page layout
+        setContentView(R.layout.login_page);  // Sets content to login page layout
+
         dbHelper = new DBHelper(this);
         numberLogin = findViewById(R.id.numberLogin);
         passwordLogin = findViewById(R.id.passwordLogin);
         btnLogin = findViewById(R.id.btnLogin);
+        forgotPwdBtn = findViewById(R.id.forgot_pwd);
+
+        // Handle login button click
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,54 +36,51 @@ public class LoginActivity extends AppCompatActivity {
                 // Input validation
                 if (phone.isEmpty() || password.isEmpty()) {
                     Toast.makeText(LoginActivity.this, "Please enter both phone number and password.", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
+                    // Get the customer ID based on phone and password
+                    int loggedInUserId = dbHelper.getCustId(phone, password);
+                    if (loggedInUserId != -1) {
+                        // Store the customer ID in SharedPreferences
+                        SharedPreferences preferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putInt("cust_id", loggedInUserId);  // Store the customer ID
+                        editor.apply();  // Save changes
 
-                boolean loggedIn = dbHelper.checkUser(numberLogin.getText().toString(), passwordLogin.getText().toString());
-                if (loggedIn){
-                    Intent intent = new Intent(LoginActivity.this,HomePageActivity.class);
-                    startActivity(intent);
-                    finish();
-                } else
-                    Toast.makeText(LoginActivity.this, "Login Failed. Incorrect phone number or password.", Toast.LENGTH_SHORT).show();
-            }}
+                        // Log the saved customer ID
+                        Log.d("LoginActivity", "Customer ID saved: " + loggedInUserId);
+
+                        // Retrieve the saved customer ID to verify
+                        int savedCustId = preferences.getInt("cust_id", -1);
+                        Log.d("LoginActivity", "Retrieved Customer ID: " + savedCustId);
+
+                        // After successful login, navigate to HomePageActivity
+                        Intent intent = new Intent(LoginActivity.this, HomePageActivity.class);
+                        startActivity(intent);
+                        finish();  // Close LoginActivity
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Login Failed. Incorrect phone number or password.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
         });
 
-        // Find the "Forgot Password" button
-        forgotPwdBtn = findViewById(R.id.forgot_pwd);
-
-        // Set OnClickListener on the "Forgot Password" button
+        // Handle Forgot Password button click
         forgotPwdBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Redirect to ForgotPassword activity
                 Intent intent = new Intent(LoginActivity.this, ForgotPassword.class);
                 startActivity(intent);
             }
         });
 
-
-
-
-
-
-        // Find the "SIGN UP" Button by its ID
-        Button signUpButton = findViewById(R.id.signUp);  // Make sure R.id.signUp matches the ID in your layout XML
-
-        // Set OnClickListener on the TextView
-        signUpButton.setOnClickListener(new View.OnClickListener() {  // Corrected method name
+        // Handle Sign Up button click
+        Button signUpButton = findViewById(R.id.signUp);
+        signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Start the SignUpActivity when the TextView is clicked
                 Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
                 startActivity(intent);
             }
         });
-
-
-
-
-
-
-
     }
 }

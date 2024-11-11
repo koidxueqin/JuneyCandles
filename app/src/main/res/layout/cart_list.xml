@@ -1,0 +1,125 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/product_img"
+        android:layout_width="160dp"
+        android:layout_height="227dp"
+        android:contentDescription="@string/image" />
+
+
+    <!-- Size Selection -->
+    <!-- Size dropdown Spinner -->
+
+    <TextView
+        android:id="@+id/product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_toEndOf="@id/product_img"
+        android:text="Product Name"
+        android:textSize="18sp" />
+
+
+    <!-- Color dropdown Spinner -->
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_name"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="9dp"
+        android:layout_toEndOf="@id/product_img"
+        android:text="@string/size_option"
+        android:textSize="14sp" />
+
+    <Spinner
+        android:id="@+id/size_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="0dp"
+
+        android:layout_toEndOf="@id/product_img"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/size_spinner"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@id/product_img"
+        android:text="@string/jar_option"
+        android:textSize="14sp" />
+
+    <Spinner
+        android:id="@+id/color_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@id/product_img"
+        android:spinnerMode="dropdown" />
+
+
+
+    <TextView
+        android:id="@+id/product_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/color_spinner"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="17dp"
+        android:layout_toEndOf="@id/product_img"
+        android:text="RM0.00"
+        android:textSize="16sp" />
+
+    <ImageButton
+        android:id="@+id/minus_qty"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/color_spinner"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="19dp"
+        android:layout_toEndOf="@id/product_price"
+        android:background="@color/purple"
+        android:paddingBottom="15dp"
+        android:src="@drawable/minus"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/qty_display"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/color_spinner"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="19dp"
+        android:text="1"
+        android:gravity="center"
+        android:layout_toEndOf="@id/minus_qty"
+        android:background="@drawable/border" />
+
+    <ImageButton
+        android:id="@+id/add_qty"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/color_spinner"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="19dp"
+        android:layout_toEndOf="@id/qty_display"
+        android:background="@color/purple"
+        android:padding="0dp"
+        android:src="@drawable/add"
+        android:textColor="@color/black" />
+
+</RelativeLayout>
