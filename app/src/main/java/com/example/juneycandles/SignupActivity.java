@@ -1,18 +1,14 @@
 package com.example.juneycandles;
 
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import android.util.Log;
-import androidx.annotation.Nullable;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -35,7 +31,6 @@ public class SignupActivity extends AppCompatActivity {
         Button backButton = findViewById(R.id.backButton); // Initialize backButton
         dbHelper = new DBHelper(this);
 
-
         // Check database connection
         boolean isConnected = dbHelper.isDatabaseConnected();
         if (isConnected) {
@@ -43,7 +38,6 @@ public class SignupActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Database connection failed!", Toast.LENGTH_SHORT).show();
         }
-
 
         // Set up the backButton click listener
         backButton.setOnClickListener(v -> {
@@ -71,17 +65,40 @@ public class SignupActivity extends AppCompatActivity {
                         Toast.makeText(SignupActivity.this, "This phone is already registered.", Toast.LENGTH_SHORT).show();
                         return;
                     }
+
                     // Proceed with registration
                     boolean signupSuccess = dbHelper.insertData(name, phone, email, address, pwd);
                     if (signupSuccess) {
-                        // Navigate to WelcomeActivity and pass the user's name
-                        Intent welcomeIntent = new Intent(SignupActivity.this, WelcomeActivity.class);
-                        welcomeIntent.putExtra("userName", name); // Pass the user's name
-                        startActivity(welcomeIntent);
-                        finish(); // Finish SignupActivity
-                        Toast.makeText(SignupActivity.this, "Signed Up Successfully!", Toast.LENGTH_SHORT).show();
-                    }else
+                        // Fetch cust_id from the database after successful signup
+                        int custId = dbHelper.getCustId(phone, pwd);
+
+                        if (custId != -1) {
+                            // Store cust_id in SharedPreferences
+                            SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putInt("cust_id", custId); // Save the cust_id
+                            editor.putString("user_name", name); // Save the user's name
+                            editor.apply(); // Apply changes to SharedPreferences
+
+                            // Log the saved customer ID
+                            Log.d("SignupActivity", "Customer ID saved: " + custId);
+
+                            // Retrieve and log the saved customer ID to verify
+                            int savedCustId = sharedPreferences.getInt("cust_id", -1);
+                            Log.d("SignupActivity", "Retrieved Customer ID: " + savedCustId);
+
+                            // Navigate to WelcomeActivity and pass the user's name
+                            Intent welcomeIntent = new Intent(SignupActivity.this, WelcomeActivity.class);
+                            welcomeIntent.putExtra("userName", name); // Pass the user's name
+                            startActivity(welcomeIntent);
+                            finish(); // Finish SignupActivity
+                            Toast.makeText(SignupActivity.this, "Signed Up Successfully!", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(SignupActivity.this, "Failed to retrieve user ID. Please try again.", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
                         Toast.makeText(SignupActivity.this, "Sign Up Failed. Please try again.", Toast.LENGTH_SHORT).show();
+                    }
                 } else {
                     Toast.makeText(SignupActivity.this, "Confirm password does not match Password.", Toast.LENGTH_SHORT).show();
                 }

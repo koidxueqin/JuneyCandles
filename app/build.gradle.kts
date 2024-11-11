@@ -45,7 +45,6 @@ dependencies {
     implementation(libs.navigation.fragment)
     implementation(libs.play.services.analytics.impl)
 
-
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
 

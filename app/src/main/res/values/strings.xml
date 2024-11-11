@@ -48,7 +48,7 @@
     <string name="team">THE TEAM</string>
     <string name="contact">CONTACT US</string>
     <string name="logout">Logout</string>
-    <string name="verify_message">Your verification code has been sent to this number.</string>
+    <string name="verify_message">Your verification code has been sent to this email.</string>
     <string name="code1">Code 1</string>
     <string name="code2">Code 2</string>
     <string name="code3">Code 3</string>
@@ -58,11 +58,37 @@
     <string name="username">Username</string>
     <string name="saveBtn">Save</string>
     <string name="edit">Edit</string>
-    <string name="pname">Product Name</string>
-    <string name="pdesc">Product Desc</string>
-    <string name="pprice">Product Price</string>
-    <string name="pimg">Product Image</string>
-    <string name="back_to_fragment_about">back_to_fragment_about</string>
-    <string name="back_to_home">back_to_home</string>
+    <string name="order">Orders</string>
+    <string name="image">Image</string>
+    <string name="add">add</string>
+    <string name="small">8oz</string>
+    <string name="medium">14oz</string>
+    <string name="large">22oz</string>
+    <string name="blue">Blue</string>
+    <string name="pink">Pink</string>
+    <string name="red">Red</string>
+    <string name="brown">Brown</string>
+    <string name="white">White</string>
+    <string name="black">Black</string>
+    <string name="orange">Orange</string>
+    <string name="purple">Purple</string>
+    <string name="green">Green</string>
+    <string name="yellow">Yellow</string>
+    <string name="size_option">Sizes</string>
+    <string name="jar_option">Jar colour</string>
+    <!-- Dropdown options for size -->
+    <string-array name="size_options">
+        <item>8oz</item>
+        <item>14oz</item>
+        <item>22oz</item>
+    </string-array>
 
+    <!-- Dropdown options for color -->
+    <string-array name="color_options">
+        <item>Red</item>
+        <item>Light Blue</item>
+        <item>White</item>
+        <item>Pink</item>
+        <item>Black</item>
+    </string-array>
 </resources>
